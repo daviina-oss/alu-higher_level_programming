@@ -18,3 +18,7 @@ Introductory Python and Shell exercises.
 | 7-edges.py | Slices the first 3, last 2, and middle letters of a word |
 | 8-concat_edges.py | Builds a sentence from slices of a string |
 | 9-easter_egg.py | Prints The Zen of Python |
+
+## python-if_else_loops_functions
+
+Conditionals, loops and functions in Python. See the README in that directory.
