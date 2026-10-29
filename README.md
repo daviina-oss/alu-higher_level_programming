@@ -34,3 +34,7 @@ Lists, tuples and matrices. See the README in that directory.
 ## python-more_data_structures
 
 Sets, dictionaries and `map`. See the README in that directory.
+
+## python-exceptions
+
+Handling and raising exceptions. See the README in that directory.
