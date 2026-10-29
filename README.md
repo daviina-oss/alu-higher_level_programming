@@ -30,3 +30,7 @@ Imports, `sys.argv` and import-safe scripts. See the README in that directory.
 ## python-data_structures
 
 Lists, tuples and matrices. See the README in that directory.
+
+## python-more_data_structures
+
+Sets, dictionaries and `map`. See the README in that directory.
