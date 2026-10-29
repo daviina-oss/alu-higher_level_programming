@@ -22,3 +22,7 @@ Introductory Python and Shell exercises.
 ## python-if_else_loops_functions
 
 Conditionals, loops and functions in Python. See the README in that directory.
+
+## python-import_modules
+
+Imports, `sys.argv` and import-safe scripts. See the README in that directory.
