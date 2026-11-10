@@ -38,3 +38,7 @@ Sets, dictionaries and `map`. See the README in that directory.
 ## python-exceptions
 
 Handling and raising exceptions. See the README in that directory.
+
+## python-classes
+
+Classes and objects: a `Square` class built up in steps. See the README in that directory.
