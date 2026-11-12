@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Module 1-rectangle: defines a class Rectangle with validated width and height."""
+"""Module 1-rectangle.
+
+Defines a class Rectangle with validated width and height.
+"""
 
 
 class Rectangle:
