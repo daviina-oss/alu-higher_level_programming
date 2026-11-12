@@ -14,3 +14,4 @@ More on classes and objects: a `Rectangle` class built up in steps.
 | 7-rectangle.py | Adds the class attribute `print_symbol` |
 | 8-rectangle.py | Adds the static method `bigger_or_equal` |
 | 9-rectangle.py | Adds the class method `square` |
+| 101-nqueens.py | Solves the N queens puzzle and prints every solution (`./101-nqueens.py N`) |
