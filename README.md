@@ -42,3 +42,7 @@ Handling and raising exceptions. See the README in that directory.
 ## python-classes
 
 Classes and objects: a `Square` class built up in steps. See the README in that directory.
+
+## python-more_classes
+
+A `Rectangle` class with properties, class attributes, static and class methods. See the README in that directory.
