@@ -50,3 +50,7 @@ A `Rectangle` class with properties, class attributes, static and class methods.
 ## python-everything_is_object
 
 Identity, type, mutability and argument passing in Python. See the README in that directory.
+
+## python-inheritance
+
+Introspection, type checks and a geometry class hierarchy. See the README in that directory.
