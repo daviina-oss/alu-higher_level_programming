@@ -46,3 +46,7 @@ Classes and objects: a `Square` class built up in steps. See the README in that 
 ## python-more_classes
 
 A `Rectangle` class with properties, class attributes, static and class methods. See the README in that directory.
+
+## python-everything_is_object
+
+Identity, type, mutability and argument passing in Python. See the README in that directory.
