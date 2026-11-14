@@ -54,3 +54,7 @@ Identity, type, mutability and argument passing in Python. See the README in tha
 ## python-inheritance
 
 Introspection, type checks and a geometry class hierarchy. See the README in that directory.
+
+## python-input_output
+
+File input/output and JSON serialization. See the README in that directory.
