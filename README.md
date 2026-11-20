@@ -62,3 +62,7 @@ File input/output and JSON serialization. See the README in that directory.
 ## SQL_introduction
 
 SQL basics with MySQL: databases, tables, queries and aggregates. See the README in that directory.
+
+## SQL_more_queries
+
+Users and privileges, constraints, keys, subqueries and joins. See the README in that directory.
