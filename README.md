@@ -58,3 +58,7 @@ Introspection, type checks and a geometry class hierarchy. See the README in tha
 ## python-input_output
 
 File input/output and JSON serialization. See the README in that directory.
+
+## SQL_introduction
+
+SQL basics with MySQL: databases, tables, queries and aggregates. See the README in that directory.
