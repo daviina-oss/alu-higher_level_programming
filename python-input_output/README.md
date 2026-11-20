@@ -18,3 +18,5 @@ Reading and writing files, and JSON serialization and deserialization in Python.
 | 10-student.py | `Student.to_json(attrs=None)` with an attribute filter |
 | 11-student.py | `Student` with `reload_from_json()` (serialization and deserialization) |
 | 12-pascal_triangle.py | `pascal_triangle(n)`: Pascal's triangle as a list of lists |
+| 100-append_after.py | `append_after(filename, search_string, new_string)`: inserts a line after each line containing a string |
+| 101-stats.py | Reads log lines from stdin and prints the total file size and the count per status code every 10 lines and on CTRL + C |
