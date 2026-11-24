@@ -1,8 +1,3 @@
 #!/bin/bash
-# Sends a GET request to the URL and displays the body, only for a 200 status
-tmp=$(mktemp)
-status=$(curl -s -o "$tmp" -w "%{http_code}" "$1")
-if [ "$status" = "200" ]; then
-    cat "$tmp"
-fi
-rm -f "$tmp"
+# Follows redirects and displays the body of the response only if the final status is 200
+t=$(mktemp); [ "$(curl -sL -o "$t" -w '%{http_code}' "$1")" = "200" ] && cat "$t"; rm -f "$t"
