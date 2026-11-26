@@ -70,3 +70,7 @@ Users and privileges, constraints, keys, subqueries and joins. See the README in
 ## python-network_0
 
 Bash scripts that use `curl` for HTTP requests. See the README in that directory.
+
+## python-network_1
+
+HTTP requests in Python with `urllib` and `requests`. See the README in that directory.
