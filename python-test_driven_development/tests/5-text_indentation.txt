@@ -1,0 +1,88 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+The function prints without a final new line, so these tests capture the
+output and show it with ``repr`` to see every space and new line.
+
+    >>> import io
+    >>> from contextlib import redirect_stdout
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> def run(text):
+    ...     buffer = io.StringIO()
+    ...     with redirect_stdout(buffer):
+    ...         text_indentation(text)
+    ...     return buffer.getvalue()
+
+Two new lines after each ., ? and :
+
+    >>> run("Hello. How are you? Fine: thanks.")
+    'Hello.\n\nHow are you?\n\nFine:\n\nthanks.\n\n'
+
+Text without any of these characters is printed as it is:
+
+    >>> run("No special characters here")
+    'No special characters here'
+
+Text after the last special character has no new line after it:
+
+    >>> run("One. Two")
+    'One.\n\nTwo'
+
+Spaces at the start and at the end of each line are removed:
+
+    >>> run("   Hello   .    World   ?   ")
+    'Hello   .\n\nWorld   ?\n\n'
+    >>> run("   padded text   ")
+    'padded text'
+
+Several special characters in a row (only . ? and : count, not !):
+
+    >>> run("What?! Really...")
+    'What?\n\n! Really.\n\n.\n\n.\n\n'
+
+New lines that are already in the text are kept:
+
+    >>> run("Line one\nLine two. Line three")
+    'Line one\nLine two.\n\nLine three'
+    >>> run("Spaces around   \n   new lines")
+    'Spaces around\nnew lines'
+
+An empty text, or one with only spaces, prints nothing:
+
+    >>> run("")
+    ''
+    >>> run("      ")
+    ''
+
+Only a special character:
+
+    >>> run(".")
+    '.\n\n'
+
+The function returns nothing:
+
+    >>> print(text_indentation("x"))
+    xNone
+
+The text must be a string:
+
+    >>> text_indentation(12)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(["Hello."])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+The text is required:
+
+    >>> text_indentation()  # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    TypeError: ...text_indentation() missing 1 required positional argument: 'text'

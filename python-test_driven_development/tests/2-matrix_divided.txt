@@ -1,0 +1,135 @@
+The ``2-matrix_divided`` module
+===============================
+
+Using ``matrix_divided``
+------------------------
+
+Import the function:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Divide a matrix of integers, rounded to 2 decimal places:
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+The original matrix is not changed and a new one is returned:
+
+    >>> matrix
+    [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 1) is matrix
+    False
+
+Floats, negative numbers and zero:
+
+    >>> matrix_divided([[1.5, -3, 0]], 2)
+    [[0.75, -1.5, 0.0]]
+    >>> matrix_divided([[10, 20]], -5)
+    [[-2.0, -4.0]]
+
+The divisor can be a float:
+
+    >>> matrix_divided([[1, 2], [3, 4]], 0.5)
+    [[2.0, 4.0], [6.0, 8.0]]
+
+Rounding to 2 decimal places:
+
+    >>> matrix_divided([[1, 2, 3]], 7)
+    [[0.14, 0.29, 0.43]]
+
+One row, one column, one number:
+
+    >>> matrix_divided([[8]], 4)
+    [[2.0]]
+    >>> matrix_divided([[1], [2], [3]], 2)
+    [[0.5], [1.0], [1.5]]
+
+Infinity as the divisor:
+
+    >>> matrix_divided([[1, 2]], float('inf'))
+    [[0.0, 0.0]]
+
+The matrix must be a list of lists of numbers:
+
+    >>> matrix_divided("not a matrix", 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided(None, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([1, 2, 3], 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2], "ab"], 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([(1, 2), (3, 4)], 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2], [3, "a"]], 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, None]], 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+An empty matrix or an empty row is not a valid matrix:
+
+    >>> matrix_divided([], 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[]], 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Every row must have the same size:
+
+    >>> matrix_divided([[1, 2, 3], [4, 5]], 3)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix_divided([[1], [2, 3]], 3)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+The divisor must be a number:
+
+    >>> matrix_divided([[1, 2]], "3")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1, 2]], None)
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1, 2]], [3])
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+The divisor cannot be zero:
+
+    >>> matrix_divided([[1, 2]], 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[1, 2]], 0.0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+Both arguments are required:
+
+    >>> matrix_divided([[1, 2]])  # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    TypeError: ...matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided()  # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    TypeError: ...matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'

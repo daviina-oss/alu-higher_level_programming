@@ -1,0 +1,75 @@
+The ``3-say_my_name`` module
+============================
+
+Using ``say_my_name``
+---------------------
+
+Import the function:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+A first and a last name:
+
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+The last name is optional (there is a space left at the end):
+
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+Empty strings are still strings:
+
+    >>> say_my_name("")
+    My name is  
+    >>> say_my_name("", "")
+    My name is  
+
+Names with spaces and symbols:
+
+    >>> say_my_name("Mary Ann", "O'Neil-Smith")
+    My name is Mary Ann O'Neil-Smith
+
+The function prints and returns nothing:
+
+    >>> print(say_my_name("Ada", "Lovelace"))
+    My name is Ada Lovelace
+    None
+
+The first name must be a string:
+
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(["John"], "Smith")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+The last name must be a string:
+
+    >>> say_my_name("John", 12)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name("John", None)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+If both are wrong, the first name is reported:
+
+    >>> say_my_name(1, 2)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+The first name is required:
+
+    >>> say_my_name()  # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    TypeError: ...say_my_name() missing 1 required positional argument: 'first_name'
